@@ -29,7 +29,10 @@ var config;
 
 switch (process.env.npm_lifecycle_event) {
   case 'build':
-    config = merge(common, {});
+    config = merge(
+      common,
+      parts.setupCSS(PATHS.app)
+    );
     break;
   default:
     config = merge(
@@ -37,7 +40,8 @@ switch (process.env.npm_lifecycle_event) {
       parts.devServer({
         host: process.env.HOST,
         port: process.env.PORT
-      })
+      }),
+      parts.setupCSS(PATHS.app)
     );
 }
 
