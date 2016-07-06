@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const validate = require('webpack-validator');
@@ -16,7 +17,8 @@ const common = {
   },
   output: {
     path: PATHS.build,
-    filename: '[name].js'
+    filename: '[name].js',
+    devtoolModuleFilenameTemplate: 'webpack:///[resource-path]?[loaders]'
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -31,12 +33,14 @@ switch (process.env.npm_lifecycle_event) {
   case 'build':
     config = merge(
       common,
+      { devtool: 'source-map' },
       parts.setupCSS(PATHS.app)
     );
     break;
   default:
     config = merge(
       common,
+      { devtool: 'eval-source-map' },
       parts.devServer({
         host: process.env.HOST,
         port: process.env.PORT
