@@ -1,11 +1,12 @@
 {
   "name": "webpack-demo",
   "version": "0.5.0",
-  "description": "webpack demo",
+  "description": "A webpack demo for SurviveJS - Webpack.",
   "keywords": [
     "webpack",
     "webpack-demo",
-    "demo"
+    "demo",
+    "SurviveJS-Webpack"
   ],
   "main": "app/index.js",
   "scripts": {
