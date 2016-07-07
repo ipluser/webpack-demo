@@ -22,7 +22,7 @@ const common = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Webpack'
+      title: 'Webpack Demo'
     })
   ]
 };
@@ -36,6 +36,10 @@ switch (process.env.npm_lifecycle_event) {
       { devtool: 'source-map' },
       parts.setFreeVariables({
         'process.env.NODE_ENV': 'production'
+      }),
+      parts.extractBundle({
+        name: 'vendor',
+        entries: ['react']
       }),
       parts.minify(),
       parts.setupCSS(PATHS.app)
