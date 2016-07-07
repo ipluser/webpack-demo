@@ -34,6 +34,9 @@ switch (process.env.npm_lifecycle_event) {
     config = merge(
       common,
       { devtool: 'source-map' },
+      parts.setFreeVariables({
+        'process.env.NODE_ENV': 'production'
+      }),
       parts.minify(),
       parts.setupCSS(PATHS.app)
     );

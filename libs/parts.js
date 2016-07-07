@@ -42,3 +42,17 @@ exports.minify = function () {
     ]
   };
 };
+
+exports.setFreeVariables = function (variables) {
+  const env = {};
+
+  for (key in variables) {
+    env[key] = JSON.stringify(variables[key]);
+  }
+
+  return {
+    plugins: [
+      new webpack.DefinePlugin(env)
+    ]
+  };
+};
