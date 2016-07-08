@@ -19,6 +19,7 @@
     "react": "^15.2.0"
   },
   "devDependencies": {
+    "clean-webpack-plugin": "^0.1.9",
     "css-loader": "^0.23.1",
     "html-webpack-plugin": "^2.22.0",
     "style-loader": "^0.13.1",

@@ -41,6 +41,7 @@ switch (process.env.npm_lifecycle_event) {
           chunkFilename: '[chunkhash].js'
         }
       },
+      parts.clean(PATHS.build),
       parts.setFreeVariables({
         'process.env.NODE_ENV': 'production'
       }),

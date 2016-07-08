@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 exports.devServer = function (options) {
   return {
@@ -69,4 +70,14 @@ exports.extractBundle = function (options) {
       })
     ]
   };
+};
+
+exports.clean = function (path) {
+  return {
+    plugins: [
+      new CleanWebpackPlugin([path], {
+        root: process.cwd()
+      })
+    ]
+  }
 };
