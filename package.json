@@ -16,12 +16,15 @@
   "author": "ipluser",
   "license": "MIT",
   "dependencies": {
+    "purecss": "^0.6.0",
     "react": "^15.2.0"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.9",
     "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.22.0",
+    "purifycss-webpack-plugin": "^2.0.3",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1",
