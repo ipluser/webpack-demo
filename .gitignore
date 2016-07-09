@@ -2,6 +2,7 @@
 *.log
 node_modules
 build
+stats.json
 
 ### OSX template
 .DS_Store

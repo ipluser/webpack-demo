@@ -11,7 +11,8 @@
   "main": "app/index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack"
+    "build": "webpack",
+    "stats": "webpack --profile --json > stats.json"
   },
   "author": "ipluser",
   "license": "MIT",
